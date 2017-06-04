@@ -21,7 +21,7 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": ["../node_modules/wanakana/lib/wanakana.js"],
+      "scripts": ["../node_modules/kuroshiro/dist/browser/kuroshiro.min.js"],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

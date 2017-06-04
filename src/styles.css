@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(//fonts.googleapis.com/earlyaccess/notosansjp.css);
+@import '~bootstrap/dist/css/bootstrap.css';
+html,body{
+width: 100%;
+height: 100%;
+font-size: 16px;
+background-color: #4A593D !important;
+}
+*{
+  font-family: 'Noto Sans JP', sans-serif !important;
+  color: #fff !important;
+}
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.transfer-container{
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+}
+.flex-item{
+  flex :1 1 auto;
+}
+textarea.form-control{
+  width:inherit;
+}
+textarea.text-input,textarea.text-input:focus{
+  background-color: #BFA095;
+}
+textarea.text-output[readonly],textarea.text-output:focus{
+  background-color: #95766B;
+}
