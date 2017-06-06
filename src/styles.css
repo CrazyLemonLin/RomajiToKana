@@ -4,7 +4,7 @@ html,body{
 width: 100%;
 height: 100%;
 font-size: 16px;
-background-color: #4A593D !important;
+background-color: #B481BB !important;
 }
 *{
   font-family: 'Noto Sans JP', sans-serif !important;
@@ -44,10 +44,10 @@ textarea.form-control{
   width:inherit;
 }
 textarea.text-input,textarea.text-input:focus{
-  background-color: #BFA095;
+  background-color: #93559C;
 }
 pre.text-output{
-  background-color: #95766B;
+  background-color: #75317F;
   font-size: 1.2rem;
   white-space: -moz-pre-wrap;
   white-space: -pre-wrap;
