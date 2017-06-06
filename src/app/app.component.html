@@ -1,12 +1,9 @@
 <div class="container" *ngIf="!isLoading">
   <header>
-    <h1>Romaji to Kana</h1>
+    <h1>Romaji To Kana</h1>
   </header>
   <div class="transfer-container">
-    <textarea class="flex-item form-control text-input"
-    (keydown.enter)="doConvert()"
-    (change)="doConvert()"
-    rows="8" [(ngModel)]="input"></textarea>
+    <textarea class="flex-item form-control text-input" (ngModelChange)="onInputChange($event)" rows="8" [ngModel]="input"></textarea>
     <div class="convert-options">
       <div>
         <label for="mode_selector">モード</label>

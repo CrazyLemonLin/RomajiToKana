@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.input = '時は行く　僕達は　すれ違い　また出会う';
+    this.input = `誰かのことを 大切にしたいと思ってる人は、\r\nきっと、誰かの大切な人なんだと思います。`;
 
     Observable
       .interval(100)
@@ -47,18 +47,18 @@ export class AppComponent implements OnInit {
     this.convertStream
       .startWith(0)
       .switchMap(() => {
-        console.log('switch map');
         return this._converter.convert(this.mode, this.to, this.input);
       })
       .subscribe(r => {
-        console.log(r);
         this.output = r;
       });
   }
 
   doConvert() {
-    console.log(this.mode);
-    console.log(this.to);
     this.convertStream.next();
+  }
+  onInputChange(value){
+    this.input = value;
+    this.doConvert();
   }
 }
