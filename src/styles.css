@@ -10,6 +10,17 @@ background-color: #4A593D !important;
   font-family: 'Noto Sans JP', sans-serif !important;
   color: #fff !important;
 }
+select,select option{
+  color: #000 !important;
+}
+
+.loading-container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container{
   height: 100vh;
   display: flex;
@@ -17,11 +28,17 @@ background-color: #4A593D !important;
 }
 .transfer-container{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex: 1 1 auto;
 }
 .flex-item{
-  flex :1 1 auto;
+  flex :1 1 0;
+}
+.convert-options{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 textarea.form-control{
   width:inherit;
@@ -29,6 +46,143 @@ textarea.form-control{
 textarea.text-input,textarea.text-input:focus{
   background-color: #BFA095;
 }
-textarea.text-output[readonly],textarea.text-output:focus{
+pre.text-output{
   background-color: #95766B;
+  font-size: 1.2rem;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+pre.text-output rt{
+  font-size: 1rem;
+}
+
+/*Loading animated text*/
+/*from http://cssload.net/en/animated-text*/
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+
+.cssload-loading {
+	text-align:center;
+	margin: 49px auto;
+	color: rgb(0,0,0);
+	font-size: 2em;
+	font-family: "Montserrat", sans-serif;
+	animation: cssload-breathe 4.2s ease infinite;
+		-o-animation: cssload-breathe 4.2s ease infinite;
+		-ms-animation: cssload-breathe 4.2s ease infinite;
+		-webkit-animation: cssload-breathe 4.2s ease infinite;
+		-moz-animation: cssload-breathe 4.2s ease infinite;
+}
+
+@keyframes cssload-breathe {
+	0% {
+		letter-spacing: 0;
+		text-shadow: 0 0 1px white;
+	}
+	30% {
+		color: transparent;
+	}
+	50% {
+		letter-spacing: 97px;
+		font-size: 0;
+		text-shadow: 0 0 6px white;
+	}
+	60% {
+		color: transparent;
+	}
+	100% {
+		letter-spacing: 0;
+		text-shadow: 0 0 1px white;
+	}
+}
+
+@-o-keyframes cssload-breathe {
+	0% {
+		letter-spacing: 0;
+		text-shadow: 0 0 1px white;
+	}
+	30% {
+		color: transparent;
+	}
+	50% {
+		letter-spacing: 97px;
+		font-size: 0;
+		text-shadow: 0 0 6px white;
+	}
+	60% {
+		color: transparent;
+	}
+	100% {
+		letter-spacing: 0;
+		text-shadow: 0 0 1px white;
+	}
+}
+
+@-ms-keyframes cssload-breathe {
+	0% {
+		letter-spacing: 0;
+		text-shadow: 0 0 1px white;
+	}
+	30% {
+		color: transparent;
+	}
+	50% {
+		letter-spacing: 97px;
+		font-size: 0;
+		text-shadow: 0 0 6px white;
+	}
+	60% {
+		color: transparent;
+	}
+	100% {
+		letter-spacing: 0;
+		text-shadow: 0 0 1px white;
+	}
+}
+
+@-webkit-keyframes cssload-breathe {
+	0% {
+		letter-spacing: 0;
+		text-shadow: 0 0 1px white;
+	}
+	30% {
+		color: transparent;
+	}
+	50% {
+		letter-spacing: 97px;
+		font-size: 0;
+		text-shadow: 0 0 6px white;
+	}
+	60% {
+		color: transparent;
+	}
+	100% {
+		letter-spacing: 0;
+		text-shadow: 0 0 1px white;
+	}
+}
+
+@-moz-keyframes cssload-breathe {
+	0% {
+		letter-spacing: 0;
+		text-shadow: 0 0 1px white;
+	}
+	30% {
+		color: transparent;
+	}
+	50% {
+		letter-spacing: 97px;
+		font-size: 0;
+		text-shadow: 0 0 6px white;
+	}
+	60% {
+		color: transparent;
+	}
+	100% {
+		letter-spacing: 0;
+		text-shadow: 0 0 1px white;
+	}
 }
