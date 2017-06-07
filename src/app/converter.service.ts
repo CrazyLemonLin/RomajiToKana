@@ -13,7 +13,7 @@ export class ConverterService {
   sub$ = new Subject<string>();
   constructor() {
     kuroshiro.init({
-      dicPath: '../assets/dict/'
+      dicPath: 'assets/dict/'
     },
       () => {
         this.isReady = true;
