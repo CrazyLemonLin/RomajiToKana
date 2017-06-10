@@ -2,7 +2,7 @@ import { IConvertParameter } from './definitions/iconvert-parameter';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { ConverterService } from './converter.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, trigger, state, style, transition, animate } from '@angular/core';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
 import 'rxjs/add/operator/switchMap';
@@ -13,13 +13,36 @@ import 'rxjs/add/operator/startWith';
 @Component({
   selector: 'cyl-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    trigger('loaderState',
+      [
+        transition(':enter', [
+          style({ opacity: 1 , transform: 'translateX(0)'}),
+          animate('.5s')
+        ]),
+        transition(':leave', [
+          animate('.5s', style({ opacity: 0, transform: 'translateX(-100%)' }))
+        ])
+      ]
+    ),
+    trigger("showContentState", [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateX(100%)' }),
+        animate('.5s')
+      ]),
+      transition(':leave', [
+        animate('.5s', style({ opacity: 1, transform: 'translateX(0)' }))
+      ])
+    ])
+  ]
 })
 export class AppComponent implements OnInit {
 
   input: string;
   output: string;
   isLoading = true;
+  loaderState = "loading"
   mode = 'normal';
   to = 'hiragana';
   modes = ['normal', 'spaced', 'okurigana', 'furigana'];
@@ -42,7 +65,10 @@ export class AppComponent implements OnInit {
         return true;
       })
       .retry()
-      .subscribe(() => this.isLoading = false);
+      .subscribe(() => {
+        this.isLoading = false;
+        this.loaderState = "loaded";
+      });
 
     this.convertStream
       .startWith(0)
@@ -57,7 +83,7 @@ export class AppComponent implements OnInit {
   doConvert() {
     this.convertStream.next();
   }
-  onInputChange(value){
+  onInputChange(value) {
     this.input = value;
     this.doConvert();
   }

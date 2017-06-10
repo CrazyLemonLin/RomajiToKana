@@ -1,4 +1,4 @@
-<div class="container" *ngIf="!isLoading">
+<div class="container" [@showContentState]="isLoading" *ngIf="!isLoading">
   <header>
     <h1>Romaji To Kana</h1>
   </header>
@@ -26,6 +26,6 @@
     <i>&copy; 2017 CrazyLemon</i>
   </footer>
 </div>
-<div class="loading-container" *ngIf="isLoading">
+<div class="loading-container" [@loaderState]="isLoading" *ngIf="isLoading">
   <h1>読み込み中...</h1>
 </div>
