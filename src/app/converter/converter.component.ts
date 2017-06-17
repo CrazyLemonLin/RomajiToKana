@@ -1,3 +1,4 @@
+import { routerTransitionSlideToLeft } from './../animations/router-animation';
 import { Component, OnInit, trigger, state, style, transition, animate } from '@angular/core';
 import { IConvertParameter } from './../definitions/iconvert-parameter';
 import { Subject } from 'rxjs/Subject';
@@ -14,35 +15,13 @@ import 'rxjs/add/operator/startWith';
   selector: 'cyl-converter',
   templateUrl: './converter.component.html',
   styleUrls: ['./converter.component.css'],
-  animations: [
-    trigger('loaderState',
-      [
-        transition(':enter', [
-          style({ opacity: 1, transform: 'translateX(0)' }),
-          animate('.5s')
-        ]),
-        transition(':leave', [
-          animate('.5s', style({ opacity: 0, transform: 'translateX(-100%)' }))
-        ])
-      ]
-    ),
-     trigger("showContentState", [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateX(100%)' }),
-        animate('.5s')
-      ]),
-      transition(':leave', [
-        animate('.5s', style({ opacity: 1, transform: 'translateX(0)' }))
-      ])
-    ])
-  ]
+  animations: [routerTransitionSlideToLeft],
+  host: { '[@routerTransition]': '' }
 })
 export class ConverterComponent implements OnInit {
 
   input: string;
   output: string;
-  isLoading = true;
-  loaderState = "loading"
   mode = 'normal';
   to = 'hiragana';
   modes = ['normal', 'spaced', 'okurigana', 'furigana'];
@@ -52,18 +31,6 @@ export class ConverterComponent implements OnInit {
 
   ngOnInit(): void {
     this.input = `誰かのことを 大切にしたいと思ってる人は、\r\nきっと、誰かの大切な人なんだと思います。`;
-
-    Observable
-      .interval(100)
-      .map(() => {
-        if (!this._converter.isReady) throw ('');
-        return true;
-      })
-      .retry()
-      .subscribe(() => {
-        this.isLoading = false;
-        this.loaderState = "loaded";
-      });
 
     this.convertStream
       .startWith(0)
