@@ -1,3 +1,35 @@
-<p>
-  analysis works!
-</p>
+<div class="transfer-container">
+  <textarea class="form-control text-input" (ngModelChange)="onInputChange($event)" rows="8" [ngModel]="input"></textarea>
+  <div class="table-responsive flex-item">
+    <table class="table table-sm table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>表層形</th>
+          <th>品詞</th>
+          <th>品詞細分類1</th>
+          <th>品詞細分類2</th>
+          <th>品詞細分類3</th>
+          <th>活用型</th>
+          <th>活用形</th>
+          <th>基本形</th>
+          <th>読み</th>
+          <th>発音</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let token of output | async">
+          <td>{{token.surface_form}}</td>
+          <td>{{token.pos}}</td>
+          <td>{{token.pos_detail_1}}</td>
+          <td>{{token.pos_detail_2}}</td>
+          <td>{{token.pos_detail_3}}</td>
+          <td>{{token.conjugated_type}}</td>
+          <td>{{token.conjugated_form}}</td>
+          <td>{{token.basic_form}}</td>
+          <td>{{token.reading}}</td>
+          <td>{{token.pronunciation}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

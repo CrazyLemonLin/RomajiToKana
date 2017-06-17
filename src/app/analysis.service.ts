@@ -13,7 +13,7 @@ export class AnalysisService {
       });
   }
 
-  analysisService(text: string): Observable<kuromoji.IpadicFeatures[]> {
+  analysis(text: string): Observable<kuromoji.IpadicFeatures[]> {
     return Observable
       .interval(500)
       .map(() => {

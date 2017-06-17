@@ -48,8 +48,9 @@ select,select option{
   justify-content: space-around;
   align-items: center;
 }
-textarea.form-control{
+textarea.form-control,{
   width:100%;
+  resize: none;
 }
 textarea.text-input,textarea.text-input:focus{
   background-color: #93559C;
