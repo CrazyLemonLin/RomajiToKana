@@ -6,11 +6,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AnalysisComponent } from './analysis/analysis.component';
+import { ConverterComponent } from './converter/converter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AnalysisComponent
+    AnalysisComponent,
+    ConverterComponent
   ],
   imports: [
     BrowserModule,
