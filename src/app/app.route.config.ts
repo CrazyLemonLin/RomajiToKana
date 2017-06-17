@@ -9,7 +9,7 @@ const appRoutes: Routes = [
     path: 'analysis', component: AnalysisComponent
   },
   {
-    path: '', redirectTo: 'conveter', pathMatch: 'full'
+    path: '', redirectTo: 'converter', pathMatch: 'full'
   }
 ];
 
