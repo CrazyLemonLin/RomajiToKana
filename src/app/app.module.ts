@@ -1,3 +1,4 @@
+import { AnalysisService } from './analysis.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConverterService } from './converter.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,7 +15,7 @@ import { AppComponent } from './app.component';
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [ConverterService],
+  providers: [ConverterService,AnalysisService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
