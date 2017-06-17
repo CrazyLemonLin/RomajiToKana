@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AnalysisComponent } from './analysis/analysis.component';
 import { ConverterComponent } from './converter/converter.component';
-
+import { routing } from "./app.route.config";
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,9 +17,10 @@ import { ConverterComponent } from './converter/converter.component';
   imports: [
     BrowserModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    routing
   ],
-  providers: [ConverterService,AnalysisService],
+  providers: [ConverterService, AnalysisService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

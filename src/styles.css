@@ -30,10 +30,14 @@ select,select option{
   display: flex;
   flex-direction: column;
 }
+.route-content{
+  display: flex;
+  flex: 1 1 auto;
+}
 .transfer-container{
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
+  height: 100%;
 }
 .flex-item{
   flex :1 1 0;
@@ -45,7 +49,7 @@ select,select option{
   align-items: center;
 }
 textarea.form-control{
-  width:inherit;
+  width:100%;
 }
 textarea.text-input,textarea.text-input:focus{
   background-color: #93559C;
@@ -61,130 +65,4 @@ pre.text-output{
 }
 pre.text-output rt{
   font-size: 1rem;
-}
-
-/*Loading animated text*/
-/*from http://cssload.net/en/animated-text*/
-
-.cssload-loading {
-	text-align:center;
-	margin: 49px auto;
-	color: rgb(0,0,0);
-	font-size: 2em;
-	font-family: "Montserrat", sans-serif;
-	animation: cssload-breathe 4.2s ease infinite;
-		-o-animation: cssload-breathe 4.2s ease infinite;
-		-ms-animation: cssload-breathe 4.2s ease infinite;
-		-webkit-animation: cssload-breathe 4.2s ease infinite;
-		-moz-animation: cssload-breathe 4.2s ease infinite;
-}
-
-@keyframes cssload-breathe {
-	0% {
-		letter-spacing: 0;
-		text-shadow: 0 0 1px white;
-	}
-	30% {
-		color: transparent;
-	}
-	50% {
-		letter-spacing: 97px;
-		font-size: 0;
-		text-shadow: 0 0 6px white;
-	}
-	60% {
-		color: transparent;
-	}
-	100% {
-		letter-spacing: 0;
-		text-shadow: 0 0 1px white;
-	}
-}
-
-@-o-keyframes cssload-breathe {
-	0% {
-		letter-spacing: 0;
-		text-shadow: 0 0 1px white;
-	}
-	30% {
-		color: transparent;
-	}
-	50% {
-		letter-spacing: 97px;
-		font-size: 0;
-		text-shadow: 0 0 6px white;
-	}
-	60% {
-		color: transparent;
-	}
-	100% {
-		letter-spacing: 0;
-		text-shadow: 0 0 1px white;
-	}
-}
-
-@-ms-keyframes cssload-breathe {
-	0% {
-		letter-spacing: 0;
-		text-shadow: 0 0 1px white;
-	}
-	30% {
-		color: transparent;
-	}
-	50% {
-		letter-spacing: 97px;
-		font-size: 0;
-		text-shadow: 0 0 6px white;
-	}
-	60% {
-		color: transparent;
-	}
-	100% {
-		letter-spacing: 0;
-		text-shadow: 0 0 1px white;
-	}
-}
-
-@-webkit-keyframes cssload-breathe {
-	0% {
-		letter-spacing: 0;
-		text-shadow: 0 0 1px white;
-	}
-	30% {
-		color: transparent;
-	}
-	50% {
-		letter-spacing: 97px;
-		font-size: 0;
-		text-shadow: 0 0 6px white;
-	}
-	60% {
-		color: transparent;
-	}
-	100% {
-		letter-spacing: 0;
-		text-shadow: 0 0 1px white;
-	}
-}
-
-@-moz-keyframes cssload-breathe {
-	0% {
-		letter-spacing: 0;
-		text-shadow: 0 0 1px white;
-	}
-	30% {
-		color: transparent;
-	}
-	50% {
-		letter-spacing: 97px;
-		font-size: 0;
-		text-shadow: 0 0 6px white;
-	}
-	60% {
-		color: transparent;
-	}
-	100% {
-		letter-spacing: 0;
-		text-shadow: 0 0 1px white;
-	}
 }

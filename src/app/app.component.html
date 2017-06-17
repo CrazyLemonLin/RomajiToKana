@@ -1,31 +1,11 @@
-<div class="container" [@showContentState]="isLoading" *ngIf="!isLoading">
+<div class="container">
   <header>
     <h1>Romaji To Kana</h1>
   </header>
-  <div class="transfer-container">
-    <textarea class="flex-item form-control text-input" (ngModelChange)="onInputChange($event)" rows="8" [ngModel]="input"></textarea>
-    <div class="convert-options">
-      <div>
-        <label for="mode_selector">モード</label>
-        <select class="custom-select" id="mode_selector" [(ngModel)]="mode" (change)="doConvert()">
-        <option *ngFor="let m of modes" [value]="m">{{m}}</option>
-       </select>
-      </div>
-      <div>
-        <label for="target_selector">ターゲット</label>
-        <select class="custom-select" id="target_selector" [(ngModel)]="to" (change)="doConvert()">
-          <option *ngFor="let t of targets" [value]="t">{{t}}</option>
-      </select>
-      </div>
-    </div>
-    <pre class="flex-item text-output" [innerHTML]="output">
-   </pre>
+  <div class="route-content">
+    <router-outlet></router-outlet>
   </div>
-
   <footer>
     <i>&copy; 2017 CrazyLemon</i>
   </footer>
-</div>
-<div class="loading-container" [@loaderState]="isLoading" *ngIf="isLoading">
-  <h1>読み込み中...</h1>
 </div>
