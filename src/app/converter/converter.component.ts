@@ -1,5 +1,5 @@
 import { routerTransitionSlideToLeft } from './../animations/router-animation';
-import { Component, OnInit, trigger, state, style, transition, animate } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IConvertParameter } from './../definitions/iconvert-parameter';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';

@@ -10,7 +10,6 @@ declare var kuroshiro: any;
 @Injectable()
 export class ConverterService {
   isReady = false;
-  sub$ = new Subject<string>();
   constructor() {
     kuroshiro.init({
       dicPath: 'assets/dict/'

@@ -5,11 +5,13 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AnalysisService {
   private _tokenizer: kuromoji.Tokenizer<kuromoji.IpadicFeatures>;
+  isReady = false;
   constructor() {
     kuromoji
       .builder({ dicPath: 'assets/dict/' })
       .build((err, tokenizer) => {
         this._tokenizer = tokenizer;
+        this.isReady = true;
       });
   }
 

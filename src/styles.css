@@ -23,6 +23,7 @@ select,select option{
   position: absolute;
   top: 0;
   left: 0;
+  background-color: #B481BB;
 }
 
 .container{
